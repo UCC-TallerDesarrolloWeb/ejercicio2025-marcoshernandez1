@@ -8,7 +8,7 @@ const addButtons = document.querySelectorAll(".add-btn");
 
 let cartArray = [];
 
-// Agregar producto al carrito
+
 addButtons.forEach(btn => {
   btn.addEventListener("click", (e) => {
     const productDiv = e.target.closest(".product");
@@ -19,7 +19,6 @@ addButtons.forEach(btn => {
   });
 });
 
-// Actualizar carrito
 function updateCart() {
   cartItems.innerHTML = "";
   let total = 0;
@@ -33,19 +32,19 @@ function updateCart() {
   cartCount.textContent = cartArray.length;
 }
 
-// Eliminar producto individual
+
 function removeItem(index) {
   cartArray.splice(index, 1);
   updateCart();
 }
 
-// Vaciar carrito
+
 clearCartBtn.addEventListener("click", () => {
   cartArray = [];
   updateCart();
 });
 
-// Mostrar / ocultar carrito
+
 cartBtn.addEventListener("click", () => {
   cart.classList.toggle("hidden");
 });
